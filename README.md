@@ -14,10 +14,10 @@ oraz ważna uwaga nt oprogramowania skryptow - [SKRYPTY POMOC](#skrypty---pomoc)
 W klasach umieszczonych w pakiecie models zdefiniowano modele symulacyjne, wykonujące jakieś obliczenia dla okresów (np. lat)
 Definicja modelu zawiera:
 
-* pole o nazwie LL, oznaczające liczbę lat symulacji,
+* pole o nazwie `LL`, oznaczające liczbę lat symulacji,
 * pola oznaczające zmienne modelu - są to tablice liczb rzeczywistych. 
 * ew. pola pomocnicze
-* metodę public void run(), wykonująca obliczenia.
+* metodę public void `run()`, wykonująca obliczenia.
 * ew. inne metody pomocnicze.
 
 Pola 1 i 2 są oznaczane adnotacją `@Bind`, co umozliwia:

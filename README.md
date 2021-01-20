@@ -332,14 +332,14 @@ PKB	1714273.4	1815516.032	1944672.4554000003	2083203.6166496002	2231733.52886629
 ZDEKS	0.47315008212808995	0.5048441885640148	0.5325856127925489	0.561801139485567	0.5925847105123984
 ```
 
-Specyfikacje użytych metod klasy `Controller` podano w p. 1 objaśnień.
+Specyfikacje użytych metod klasy `Controller` podano w [p. 1 objaśnień](#1-założenia-ogólne).
 
 Plików `Main.java` oraz `Model1.java` nie wolno modyfikować. Umiejscowienie plików `data1.txt` i `script1.groovy` jest okreslone przez metodę main klasy `Main`.
 Przygotować program tak, aby działał dla innych modeli i danych oraz innych skryptów. Aby to przetestowac można stworzyć dodatkowe klasy w pakiecie.
 
 Dodatkowe punkty ponad max uzyskujemy za:
-przygotowanie GUI (zob. p. 5 objaśnień)
-ułatwienia w pisaniu skryptów  (zob. p. 6 objaśnień)
+przygotowanie GUI (zob. [p. 5 objaśnień]())
+ułatwienia w pisaniu skryptów  (zob. [p. 6 objaśnień]())
 
 # Skrypty - pomoc
 

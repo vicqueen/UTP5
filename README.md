@@ -6,7 +6,7 @@ Zadanie obejmuje material, dotyczący: refleksji, adnotacji i skryptów.
 W pełnej wersji to zadanie stanowi mały projekt.
 Dlatego na początku zostaną przedstawione objaśnienia.
 
-Na końcu sformułowane jest samo zadanie do wykonania - ZOBACZ.
+Na końcu sformułowane jest samo zadanie do wykonania - [ZOBACZ](#zadanie-do-wykonania).
 oraz ważna uwaga nt oprogramowania skryptow - [SKRYPTY POMOC](#skrypty---pomoc)
 
 1. Założenia ogólne

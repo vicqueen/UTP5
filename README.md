@@ -14,32 +14,27 @@ oraz ważna uwaga nt oprogramowania skryptow - [SKRYPTY POMOC](#skrypty---pomoc)
 W klasach umieszczonych w pakiecie models zdefiniowano modele symulacyjne, wykonujące jakieś obliczenia dla okresów (np. lat)
 Definicja modelu zawiera:
 
-pole o nazwie LL, oznaczające liczbę lat symulacji,
+* pole o nazwie LL, oznaczające liczbę lat symulacji,
+* pola oznaczające zmienne modelu - są to tablice liczb rzeczywistych. 
+* ew. pola pomocnicze
+* metodę public void run(), wykonująca obliczenia.
+* ew. inne metody pomocnicze.
 
-pola oznaczające zmienne modelu - są to tablice liczb rzeczywistych.
-
-ew. pola pomocnicze
-
-metodę public void run(), wykonująca obliczenia.
-
-ew. inne metody pomocnicze.
-
-Pola 1 i 2 są oznaczane adnotacją @Bind, co umozliwia:
+Pola 1 i 2 są oznaczane adnotacją `@Bind`, co umozliwia:
 - nadanie wartości zmiennym wejściowym modelu przed wykonaniem obliczeń,
 - pobranie wartości zmiennych wyliczonych w modelu (po wykonaniu obliczeń).
 
-Wszystkie zmienne oznaczone adnotacją @Bind są dostępne dla skryptów, które mogą być uruchamiane po wykonaniu obliczen modelowych i  wykonywać jakieś dalsze obliczenia.
+Wszystkie zmienne oznaczone adnotacją `@Bind` są dostępne dla skryptów, które mogą być uruchamiane po wykonaniu obliczen modelowych i  wykonywać jakieś dalsze obliczenia.
 Są także dostępne dla ew. innych modeli.
 
+Zarządzaniem obliczeniami zajmuje się klasa `Controller`, która ma następujące publiczne składowe:
 
-Zarządzaniem obliczeniami zajmuje się klasa Controller, która ma następujące publiczne składowe:
-
-* konstruktor - Controller(String modelName) - parametrem jest tu nazwa klasy modelu,
-* Controller readDataFrom(String fname) - wczytuje dane do obliczeń z  pliku o nazwie fname.
-* Controller runModel() - uruchamia obliczenia modelowe,
-* Controller runScriptFromFile(String fname)  - wykonuje skrypt z pliku o nazwie fname,
-* Controller runScript(String script) - wykonuje kod skryptu podany jako napis,
-* String getResultsAsTsv() - zwraca wyniki obliczeń (wszystkie zmienne z modelu oraz zmienne utworzone w skryptach) w postaci  napisu, którego kolejne wiersze zawierają nazwę zmiennej i jej wartosci, rozdzielone znakami tabulacji.
+* konstruktor - `Controller(String modelName)` - parametrem jest tu nazwa klasy modelu,
+* `Controller readDataFrom(String fname)` - wczytuje dane do obliczeń z  pliku o nazwie fname.
+* `Controller runModel()` - uruchamia obliczenia modelowe,
+* `Controller runScriptFromFile(String fname)` - wykonuje skrypt z pliku o nazwie fname,
+* `Controller runScript(String script)` - wykonuje kod skryptu podany jako napis,
+* `String getResultsAsTsv()` - zwraca wyniki obliczeń (wszystkie zmienne z modelu oraz zmienne utworzone w skryptach) w postaci  napisu, którego kolejne wiersze zawierają nazwę zmiennej i jej wartosci, rozdzielone znakami tabulacji.
 
 ## 2.  Założenia co do danych wejściowych
 

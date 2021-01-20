@@ -267,7 +267,8 @@ DPKB = PKB/PKB[0]
 To nie jest trudne. Procentuje dodatkowymi punktami ponad max.
 
 I wreszcie ....
-Zadanie do wykonania
+
+# Zadanie do wykonania
 
 Mając wygenerowany projekt z klasą `Main` oraz `models.Model1`, a także plik z danymi wejściowymi `data1.txt`:
 

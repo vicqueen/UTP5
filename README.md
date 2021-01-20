@@ -221,26 +221,30 @@ ZDEKS	0.47315008212808995	0.5048441885640148	0.5325856127925489	0.56180113948556
 
 Dodatkowe punkty (ponad ustalone max) można uzyskac za przygotowanie GUI do działania z modelami i skryptami.
 Oto ad hoc przygotowany przykład takiego interfejsu.
+
 ![Alt text](img/rys1.jpg)
 
 Po naciśnięciu "Run model":
 
-r
+![Alt text](img/rys2.jpg)
 
 Uwaga: proszę zwrócić uwagę na formatowanie liczb
 
 Można teraz wybrać skrypt z pliku:
-r
+
+![Alt text](img/rys3.jpg)
 
 i od razu zobaczyć dodatkowy wynik:
-r
+
+![Alt text](img/rys4.jpg)
 
 albo wybrać "Create and run ad hoc script" aby wpisać kod skryptu:
-r 
+
+![Alt text](img/rys5.jpg)
+
 i od razu uzyskac wynik:
 
-r
-
+![Alt text](img/rys6.jpg)
 
 ## 6. Dodatkowe właściwości
 

@@ -7,7 +7,7 @@ W pełnej wersji to zadanie stanowi mały projekt.
 Dlatego na początku zostaną przedstawione objaśnienia.
 
 Na końcu sformułowane jest samo zadanie do wykonania - ZOBACZ.
-oraz ważna uwaga nt oprogramowania skryptow - SKRYPTY POMOC
+oraz ważna uwaga nt oprogramowania skryptow - [SKRYPTY POMOC](#skrypty---pomoc)
 
 1. Założenia ogólne
 

@@ -54,7 +54,7 @@ Jesli jest ich mniej niż `LL`, to pozostałe są ustalane na ostatnią z podany
 
 Mamy następujący model:
 
-```
+```java
 public class Model1 {
   
   @Bind private int LL; // liczba lat
@@ -110,7 +110,7 @@ IMP	784342.4
 
 następujący fragment programu głównego:
 
-```
+```java
     Controller ctl = new Controller("Model1");
     ctl.readDataFrom(dataDir + "data1.txt") 
                     .runModel()
@@ -153,7 +153,9 @@ IMP	784342.4
 
 uzyskamy po
 
-`ctl.readDataFrom(dataDir + "data2.txt").runModel()`
+```java
+ctl.readDataFrom(dataDir + "data2.txt").runModel()
+```
 
 wynik:
 
@@ -179,7 +181,7 @@ Zmienne utworzone w skrypcie mają być dostępne zarówno w wynikowym tsv, jak 
 
 Przykładowy skrypt, zapisany w pliku `script1.groovy ` może wyglądać tak (obliczany tu jest wskaźnik tzw. zdolności eksportowej):
 
-```
+```groovy
 ZDEKS = new double[LL]
 for (i = 0; i < LL; i++) {
   ZDEKS[i] =  EKS[i]/PKB[i];
@@ -190,7 +192,7 @@ Uwaga: w tym skrypcie dostępna jest zmienna `LL`, oznaczająca liczbę lat oraz
 
 Przykładowe wywołanie:
 
-```
+```java
     Controller ctl = new Controller("Model1");
     ctl.readDataFrom(dataDir + "data2.txt") 
                     .runModel()
@@ -250,7 +252,7 @@ i od razu uzyskac wynik:
 
 Warto pomyśleć nad tym jak uprościc pisanie skryptów. Np. zamiast:
 
-```
+```groovy
 DPKB = new double[LL]
 for (t = 0; t < LL; t++) {
   DPKB[t] = PKB[t]/PKB[0]*100
@@ -259,7 +261,7 @@ for (t = 0; t < LL; t++) {
 
 chcielibyśmy pisać tak:
 
-```
+```groovy
 DPKB = PKB/PKB[0]
 ```
 
@@ -287,7 +289,7 @@ IMP	784342.4
 
 oraz plik skryptu `script1.groovy`:
 
-```
+```groovy
 ZDEKS = new double[LL]
 for (i = 0; i < LL; i++) {
   ZDEKS[i] =  EKS[i]/PKB[i];
@@ -296,7 +298,7 @@ for (i = 0; i < LL; i++) {
 
 zdefinować adnotację `@Bind` oraz klasę `Controller` w taki sposób, aby poniższy program:
 
-```
+```java
 public class Main {
 
   public static void main(String[] args) {

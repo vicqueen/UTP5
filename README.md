@@ -9,7 +9,7 @@ Dlatego na początku zostaną przedstawione objaśnienia.
 Na końcu sformułowane jest samo zadanie do wykonania - [ZOBACZ](#zadanie-do-wykonania).
 oraz ważna uwaga nt oprogramowania skryptow - [SKRYPTY POMOC](#skrypty---pomoc)
 
-1. Założenia ogólne
+## 1. Założenia ogólne
 
 W klasach umieszczonych w pakiecie models zdefiniowano modele symulacyjne, wykonujące jakieś obliczenia dla okresów (np. lat)
 Definicja modelu zawiera:
@@ -41,7 +41,7 @@ Zarządzaniem obliczeniami zajmuje się klasa Controller, która ma następując
 * Controller runScript(String script) - wykonuje kod skryptu podany jako napis,
 * String getResultsAsTsv() - zwraca wyniki obliczeń (wszystkie zmienne z modelu oraz zmienne utworzone w skryptach) w postaci  napisu, którego kolejne wiersze zawierają nazwę zmiennej i jej wartosci, rozdzielone znakami tabulacji.
 
-2.  Założenia co do danych wejściowych
+## 2.  Założenia co do danych wejściowych
 
 Pliki z danymi wejściowymi zawierają w kolejnych wierszach dane w postaci:
 
@@ -55,7 +55,7 @@ Na podstawie tego wiersza definiowana jest wartość specjalnej zmiennej LL (lic
 Wartości dla zmiennych może być od `1 do LL`.
 Jesli jest ich mniej niż `LL`, to pozostałe są ustalane na ostatnią z podanych wartości.
 
-3. Przykład
+## 3. Przykład
 
 Mamy następujący model:
 
@@ -177,7 +177,7 @@ IMP	784342.4	894150.3359999999	1019331.3830399998	1162037.7766655996	1324723.065
 PKB	1714273.4	1815516.032	1944672.4554000003	2083203.6166496002	2231733.528866293
 ```
 
-4. Skrypty
+## 4. Skrypty
 
 Skrypty najłatwiej będzie pisać w języku Groovy. W skryptach mają być dostępne wszystkie wczytane dane oraz  dane z modelu (ale tylko oznaczone przez @Bind).
 Zmienne utworzone w skrypcie mają być dostępne zarówno w wynikowym tsv, jak i w ew. innych modelach (o ile występują tam  jako pola oznaczone przez @Bind), a także innych skryptach. Wyjątkiem od tej reguły są zmienne o jednoliterowych nazwach  pisanych małą literą (np. i, j k, p) - te zmienne nie będą widoczne w wynikach ani dostępne w modelach czy innych skryptach.
@@ -222,7 +222,7 @@ PKB	1714273.4	1815516.032	1944672.4554000003	2083203.6166496002	2231733.52886629
 ZDEKS	0.47315008212808995	0.5048441885640148	0.5325856127925489	0.561801139485567	0.5925847105123984
 ```
 
-5.  GUI
+## 5.  GUI
 
 Dodatkowe punkty (ponad ustalone max) można uzyskac za przygotowanie GUI do działania z modelami i skryptami.
 Oto ad hoc przygotowany przykład takiego interfejsu.
@@ -247,7 +247,7 @@ i od razu uzyskac wynik:
 r
 
 
-6. Dodatkowe właściwości
+## 6. Dodatkowe właściwości
 
 Warto pomyśleć nad tym jak uprościc pisanie skryptów. Np. zamiast:
 

@@ -14,10 +14,10 @@ oraz ważna uwaga nt oprogramowania skryptow - [SKRYPTY POMOC](#skrypty---pomoc)
 W klasach umieszczonych w pakiecie models zdefiniowano modele symulacyjne, wykonujące jakieś obliczenia dla okresów (np. lat)
 Definicja modelu zawiera:
 
-* pole o nazwie LL, oznaczające liczbę lat symulacji,
+* pole o nazwie `LL`, oznaczające liczbę lat symulacji,
 * pola oznaczające zmienne modelu - są to tablice liczb rzeczywistych. 
 * ew. pola pomocnicze
-* metodę public void run(), wykonująca obliczenia.
+* metodę public void `run()`, wykonująca obliczenia.
 * ew. inne metody pomocnicze.
 
 Pola 1 i 2 są oznaczane adnotacją `@Bind`, co umozliwia:
@@ -176,8 +176,8 @@ PKB	1714273.4	1815516.032	1944672.4554000003	2083203.6166496002	2231733.52886629
 
 ## 4. Skrypty
 
-Skrypty najłatwiej będzie pisać w języku Groovy. W skryptach mają być dostępne wszystkie wczytane dane oraz  dane z modelu (ale tylko oznaczone przez @Bind).
-Zmienne utworzone w skrypcie mają być dostępne zarówno w wynikowym tsv, jak i w ew. innych modelach (o ile występują tam  jako pola oznaczone przez @Bind), a także innych skryptach. Wyjątkiem od tej reguły są zmienne o jednoliterowych nazwach  pisanych małą literą (np. i, j k, p) - te zmienne nie będą widoczne w wynikach ani dostępne w modelach czy innych skryptach.
+Skrypty najłatwiej będzie pisać w języku `Groovy`. W skryptach mają być dostępne wszystkie wczytane dane oraz  dane z modelu (ale tylko oznaczone przez `@Bind`).
+Zmienne utworzone w skrypcie mają być dostępne zarówno w wynikowym `tsv`, jak i w ew. innych modelach (o ile występują tam  jako pola oznaczone przez `@Bind`), a także innych skryptach. Wyjątkiem od tej reguły są zmienne o jednoliterowych nazwach  pisanych małą literą (np. i, j k, p) - te zmienne nie będą widoczne w wynikach ani dostępne w modelach czy innych skryptach.
 
 Przykładowy skrypt, zapisany w pliku `script1.groovy ` może wyglądać tak (obliczany tu jest wskaźnik tzw. zdolności eksportowej):
 
@@ -188,7 +188,7 @@ for (i = 0; i < LL; i++) {
 }
 ```
 
-Uwaga: w tym skrypcie dostępna jest zmienna `LL`, oznaczająca liczbę lat oraz zmienne powstałe w wyniku obliczen modelowych (PKB i EKS). Skrypt tworzy nowe zmienne ZDEKS oraz i, ale tylko ZDEKS będzie  widoczna w wynikach i dostępna dla innych modeli i skryptów.
+Uwaga: w tym skrypcie dostępna jest zmienna `LL`, oznaczająca liczbę lat oraz zmienne powstałe w wyniku obliczen modelowych (`PKB` i `EKS`). Skrypt tworzy nowe zmienne `ZDEKS` oraz `i`, ale tylko `ZDEKS` będzie  widoczna w wynikach i dostępna dla innych modeli i skryptów.
 
 Przykładowe wywołanie:
 
@@ -332,14 +332,14 @@ PKB	1714273.4	1815516.032	1944672.4554000003	2083203.6166496002	2231733.52886629
 ZDEKS	0.47315008212808995	0.5048441885640148	0.5325856127925489	0.561801139485567	0.5925847105123984
 ```
 
-Specyfikacje użytych metod klasy `Controller` podano w p. 1 objaśnień.
+Specyfikacje użytych metod klasy `Controller` podano w [p. 1 objaśnień](#1-założenia-ogólne).
 
 Plików `Main.java` oraz `Model1.java` nie wolno modyfikować. Umiejscowienie plików `data1.txt` i `script1.groovy` jest okreslone przez metodę main klasy `Main`.
 Przygotować program tak, aby działał dla innych modeli i danych oraz innych skryptów. Aby to przetestowac można stworzyć dodatkowe klasy w pakiecie.
 
 Dodatkowe punkty ponad max uzyskujemy za:
-przygotowanie GUI (zob. p. 5 objaśnień)
-ułatwienia w pisaniu skryptów  (zob. p. 6 objaśnień)
+przygotowanie GUI (zob. [p. 5 objaśnień](#5--gui))
+ułatwienia w pisaniu skryptów  (zob. [p. 6 objaśnień](#6-dodatkowe-właściwości))
 
 # Skrypty - pomoc
 

@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fbdbcc7-96be-4826-be89-b6b16a600825" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/UTP5_PW_S19058/src/zad1/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UTP5_PW_S19058/src/zad1/models/Bind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UTP5_PW_S19058/src/zad1/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/UTP5_PW_S19058/src/zad1/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UTP5_PW_S19058/src/zad1/models/Bind.java" beforeDir="false" afterPath="$PROJECT_DIR$/UTP5_PW_S19058/src/zad1/models/Bind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UTP5_PW_S19058/src/zad1/models/Model1.java" beforeDir="false" afterPath="$PROJECT_DIR$/UTP5_PW_S19058/src/zad1/models/Model1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +15,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -32,6 +34,34 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="zad1.models" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="zad1.models" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="zad1.Main" />
+      <module name="UTP5_PW_S19058" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="zad1.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -54,5 +84,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/UTP5_PW_S19058/src/zad1/Controller.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

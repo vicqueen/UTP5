@@ -2,13 +2,15 @@ package zad1;
 
 import zad1.models.Bind;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Arrays;
+import javax.script.*;
 import java.util.HashMap;
 import java.util.List;
 
@@ -71,10 +73,22 @@ public class Controller {
     }
 
     public Controller runScriptFromFile(String fname) {
+        ScriptEngine engine = getScriptEngine();
+        try {
+            engine.eval(new FileReader(fname));
+            ScriptContext scriptContext = engine.getContext();
+        } catch (ScriptException | FileNotFoundException e) {
+            e.printStackTrace();
+        }
         return this;
     }
 
     public Controller runScript(String script) {
+        try {
+            getScriptEngine().eval(script);
+        } catch (ScriptException e) {
+            e.printStackTrace();
+        }
         return this;
     }
 
@@ -83,5 +97,10 @@ public class Controller {
         // którego kolejne wiersze zawierają nazwę zmiennej i jej wartosci,
         // rozdzielone znakami tabulacji.
         return "";
+    }
+
+    private ScriptEngine getScriptEngine() {
+        ScriptEngineManager manager = new ScriptEngineManager();
+        return manager.getEngineByName("groovy");
     }
 }

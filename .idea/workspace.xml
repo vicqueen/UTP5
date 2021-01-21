@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4fbdbcc7-96be-4826-be89-b6b16a600825" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UTP5_PW_S19058/UTP5_PW_S19058.iml" beforeDir="false" afterPath="$PROJECT_DIR$/UTP5_PW_S19058/UTP5_PW_S19058.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UTP5_PW_S19058/src/zad1/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/UTP5_PW_S19058/src/zad1/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UTP5_PW_S19058/src/zad1/models/Model1.java" beforeDir="false" afterPath="$PROJECT_DIR$/UTP5_PW_S19058/src/zad1/models/Model1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +42,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../groovy-all-2.4.5.jar" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.47126436" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -51,7 +55,20 @@
       <recent name="zad1.models" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="DiscoverEngines" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="zad1.DiscoverEngines" />
+      <module name="UTP5_PW_S19058" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="zad1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="zad1.Main" />
       <module name="UTP5_PW_S19058" />
@@ -68,6 +85,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.DiscoverEngines" />
       </list>
     </recent_temporary>
   </component>
@@ -92,24 +110,20 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/UTP5_PW_S19058/src/zad1/Controller.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/UTP5_PW_S19058/src/zad1/models/Model1.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="17" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/UTP5_PW_S19058/src/zad1/Controller.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

@@ -15,6 +15,7 @@ import java.util.List;
 public class Controller {
 
     private String modelName;
+    private int yearsCount;
     private HashMap<String, Object> fieldsValues;
 
     public Controller(String modelName) {
@@ -28,12 +29,18 @@ public class Controller {
 
             for (int i = 0; i < lines.size(); i++) {
                 String[] lineSplit = lines.get(i).split("\t");
-                Object[] fieldValue = lineSplit[1].split(" ");
+                String[] fieldValue = lineSplit[1].split(" ");
 
                 if (i == 0) {
-                    fieldsValues.put("LL", fieldValue.length );
+                    yearsCount = fieldValue.length;
+                    fieldsValues.put("LL", yearsCount );
                 } else {
-                    double[] values = Arrays.stream(fieldValue).mapToDouble(s -> Double.parseDouble((String) s)).toArray();
+                    double[] values = new double[yearsCount];
+                    double lastRememberedValue = 0;
+                    for (int j = 0; j < yearsCount; j++) {
+                        values[j] = j < fieldValue.length ? Double.parseDouble(fieldValue[j]) : lastRememberedValue;
+                        lastRememberedValue = values[j];
+                    }
                     fieldsValues.put(lineSplit[0], values);
                 }
             }
@@ -47,15 +54,15 @@ public class Controller {
     public Controller runModel() {
         try {
             Class modelClass = Class.forName("zad1.models." + modelName);
+            Object childClass = modelClass.newInstance();
             for (Field field : modelClass.getDeclaredFields()) {
                 Bind bind = field.getAnnotation(Bind.class);
                 if (bind != null) {
                     field.setAccessible(true);
-                    Object childClass = modelClass.newInstance();
                     field.set(childClass, fieldsValues.get(field.getName()));
-                    modelClass.getDeclaredMethods()[0].invoke(childClass);
                 }
             }
+            modelClass.getDeclaredMethods()[0].invoke(childClass);
         } catch (ClassNotFoundException | IllegalAccessException | InvocationTargetException | InstantiationException e) {
             e.printStackTrace();
         }

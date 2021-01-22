@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -38,7 +39,7 @@ public class Controller {
                 String[] fieldValue = lineSplit[1].split(" ");
 
                 if (i == 0) {
-                    firstLineToBeDisplayed = lines.get(i);
+                    firstLineToBeDisplayed = lines.get(i).replace(' ', '\t');
                     yearsCount = fieldValue.length;
                     fieldsValues.put("LL", yearsCount );
                 } else {
@@ -103,7 +104,19 @@ public class Controller {
     }
 
     public String getResultsAsTsv() {
-        return "";
+        StringBuilder stringBuilder = new StringBuilder(firstLineToBeDisplayed);
+        ArrayList<String> processedVariableNames = new ArrayList<String>();
+        fieldsService.appendClassFields(stringBuilder, processedVariableNames);
+
+        bindings.forEach( (variableName, variableValue) -> {
+            if (variableName != "LL" && !processedVariableNames.contains(variableName)) {
+                stringBuilder.append("\n" + variableName);
+                fieldsService.appendValue(stringBuilder, variableValue);
+                processedVariableNames.add(variableName);
+            }
+        });
+
+        return stringBuilder.toString();
     }
 
     private ScriptEngine getScriptEngine() {

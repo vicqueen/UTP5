@@ -1,24 +1,28 @@
 package zad1;
 
-import zad1.models.Bind;
-
+import javax.script.Bindings;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import javax.script.*;
 import java.util.HashMap;
 import java.util.List;
 
 public class Controller {
 
     private String modelName;
+    private String firstLineToBeDisplayed;
     private int yearsCount;
     private HashMap<String, Object> fieldsValues;
+    private Class modelClass;
+    private Object childClass;
+    private FieldsService fieldsService;
+    private Bindings bindings;
 
     public Controller(String modelName) {
         this.modelName = modelName;
@@ -34,6 +38,7 @@ public class Controller {
                 String[] fieldValue = lineSplit[1].split(" ");
 
                 if (i == 0) {
+                    firstLineToBeDisplayed = lines.get(i);
                     yearsCount = fieldValue.length;
                     fieldsValues.put("LL", yearsCount );
                 } else {
@@ -55,17 +60,12 @@ public class Controller {
 
     public Controller runModel() {
         try {
-            Class modelClass = Class.forName("zad1.models." + modelName);
-            Object childClass = modelClass.newInstance();
-            for (Field field : modelClass.getDeclaredFields()) {
-                Bind bind = field.getAnnotation(Bind.class);
-                if (bind != null) {
-                    field.setAccessible(true);
-                    field.set(childClass, fieldsValues.get(field.getName()));
-                }
-            }
-            modelClass.getDeclaredMethods()[0].invoke(childClass);
-        } catch (ClassNotFoundException | IllegalAccessException | InvocationTargetException | InstantiationException e) {
+            modelClass = Class.forName("zad1.models." + modelName);
+            childClass = modelClass.newInstance();
+            fieldsService = new FieldsService(modelClass, childClass);
+            fieldsService.putValuesToClassFields(fieldsValues);
+            fieldsService.invokeFirstMethodOfClass();
+        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException e) {
             e.printStackTrace();
         }
 
@@ -74,28 +74,35 @@ public class Controller {
 
     public Controller runScriptFromFile(String fname) {
         ScriptEngine engine = getScriptEngine();
+        bindings = engine.createBindings();
+        fieldsService.putClassFieldsToBindings(bindings);
+
         try {
-            engine.eval(new FileReader(fname));
-            ScriptContext scriptContext = engine.getContext();
+            engine.eval(new FileReader(fname), bindings);
         } catch (ScriptException | FileNotFoundException e) {
             e.printStackTrace();
         }
+        fieldsService.putScriptVariablesToClassFields(bindings);
+
         return this;
     }
 
     public Controller runScript(String script) {
+        ScriptEngine engine = getScriptEngine();
+        bindings = engine.createBindings();
+        fieldsService.putClassFieldsToBindings(bindings);
+
         try {
-            getScriptEngine().eval(script);
+            getScriptEngine().eval(script, bindings);
         } catch (ScriptException e) {
             e.printStackTrace();
         }
+        fieldsService.putScriptVariablesToClassFields(bindings);
+
         return this;
     }
 
     public String getResultsAsTsv() {
-        //zwraca wyniki obliczeń (wszystkie zmienne z modelu oraz zmienne utworzone w skryptach) w postaci napisu,
-        // którego kolejne wiersze zawierają nazwę zmiennej i jej wartosci,
-        // rozdzielone znakami tabulacji.
         return "";
     }
 
